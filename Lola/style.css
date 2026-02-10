@@ -1,0 +1,142 @@
+:root {
+  --bg1: #2b0f1f;
+  --bg2: #120812;
+  --card: rgba(255, 255, 255, 0.12);
+  --border: rgba(255, 255, 255, 0.25);
+  --text: #fff;
+  --muted: rgba(255, 255, 255, 0.8);
+  --yes: #ff6fae;
+  --no: #ff9fbf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background:
+    radial-gradient(circle at top, #ff7aa255, transparent 60%),
+    linear-gradient(160deg, var(--bg1), var(--bg2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--text);
+}
+
+.card {
+  width: min(640px, 94vw);
+  padding: 48px 36px 40px;
+  background: var(--card);
+  border-radius: 32px;
+  border: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heart {
+  font-size: 38px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 38px;
+  font-weight: 700;
+  margin: 12px 0 10px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 34px;
+}
+
+.stage {
+  position: relative;
+  height: 300px;               /* + grand */
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  margin-top: 10px;
+}
+
+
+.btn {
+  position: absolute;
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.yes {
+  background: linear-gradient(135deg, #ff85b3, var(--yes));
+  color: #3a001f;
+}
+
+.no {
+  background: linear-gradient(135deg, #ffc1d6, var(--no));
+  color: #5a0022;
+}
+
+.result {
+  margin-top: 30px;
+  padding: 26px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  animation: fadeIn 0.5s ease;
+}
+
+.result h2 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 10px;
+}
+
+.result p {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.result a {
+  color: #ffd1e6;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 209, 230, 0.6);
+}
+
+#confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
